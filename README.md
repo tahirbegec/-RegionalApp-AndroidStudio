@@ -1,2 +1,2 @@
 # RegionalApp-AndroidStudio
-[RegionalApp-AndroidStudio pdf](TestDoc.pdf)
+[RegionalApp-AndroidStudio](TestDoc.pdf)
