@@ -1,7 +1,7 @@
 # RegionalApp-AndroidStudio
 [RegionalApp-AndroidStudio](TestDoc.pdf)
 
-
+This application is an android based application and coded with android studio, the language used is java. This application was coded "Softwarepraktikum" at the university in 2021. The main purpose of the application is to provide users with facilities such as filter search etc. within the application.
 
 
 ![Screenshot](ss.png)
