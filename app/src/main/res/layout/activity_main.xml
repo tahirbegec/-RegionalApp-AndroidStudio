@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_700"
+    tools:context=".View.MainActivity">
+
+    <Button
+        android:id="@+id/Change_lang"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="108dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:onClick="changelang"
+        android:text="@string/Language"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/CompanyList"
+        app:layout_constraintStart_toEndOf="@+id/desiredOpeningTimeButton"
+        app:layout_constraintTop_toBottomOf="@+id/companyTypeButton"
+        app:layout_constraintVertical_bias="0.45"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp" />
+
+    <LinearLayout
+        android:id="@+id/mainHeaderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/teal_200"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/mainHeader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/MainHeader"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/settings"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="popupDataCategorySettings"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:icon="@drawable/ic_settings_icon"
+        app:iconTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainHeaderLayout" />
+
+    <Button
+        android:id="@+id/search"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="32dp"
+        android:onClick="searchFilter"
+        android:textColor="@color/black"
+        app:icon="@android:drawable/ic_search_category_default"
+        app:iconTint="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/filterString"
+        app:layout_constraintTop_toBottomOf="@+id/mainHeaderLayout" />
+
+    <EditText
+        android:id="@+id/filterString"
+        android:layout_width="270dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/Filter"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainHeaderLayout"
+        tools:ignore="Autofill" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/CompanyList"
+        android:layout_width="391dp"
+        android:layout_height="395dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyTypeButton">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/productCategoryButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="138dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="9dp"
+        android:onClick="popupProductCategory"
+        android:text="@string/productCategory"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/desiredOpeningTimeButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filterString"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/companyTypeButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="108dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:onClick="popupCompanyType"
+        android:text="@string/CompanyType"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/desiredOpeningTimeButton"
+        app:layout_constraintTop_toBottomOf="@+id/organisationsButton"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/organisationsButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="108dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:onClick="popupOrganisation"
+        android:text="@string/Organisation"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/productCategoryButton"
+        app:layout_constraintTop_toBottomOf="@+id/filterString"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/desiredOpeningTimeButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="138dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="popupOpenAt"
+        android:text="@string/desiredOpeningTime"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/CompanyList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/organisationsButton"
+        app:layout_constraintVertical_bias="0.028"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp" />
+
+    <Switch
+        android:id="@+id/open"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="0sp"
+        android:onClick="switchFilter"
+        android:splitTrack="false"
+        android:text="@string/open"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        tools:checked="false"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/delivering"
+        android:layout_width="106dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="0sp"
+        android:onClick="switchFilter"
+        android:splitTrack="false"
+        android:text="@string/Delivering"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/open"
+        tools:checked="false"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/numberOfResultsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/NumberOfResults"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/numberOfResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/numberOfResultsText" />
+
+    <Switch
+        android:id="@+id/favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="switchFilter"
+        android:text="@string/Favorite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delivering" />
+
+    <Button
+        android:id="@+id/setLocationButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="51dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="popupLocation"
+        app:icon="@android:drawable/ic_dialog_map"
+        app:iconTint="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/CompanyList"
+        app:layout_constraintEnd_toStartOf="@+id/Change_lang"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desiredOpeningTimeButton"
+        app:layout_constraintVertical_bias="0.363" />
+
+    <Switch
+        android:id="@+id/locationSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="switchFilter"
+        android:text="@string/Nearby"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favorite" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
